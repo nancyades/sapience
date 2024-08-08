@@ -1,0 +1,891 @@
+{
+	"info": {
+		"_postman_id": "31169a82-49dc-4494-8f54-24073a84874c",
+		"name": "Sapience API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18080360"
+	},
+	"item": [
+		{
+			"name": "Generate OTP",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}api/generate?phone=8778480033",
+					"host": [
+						"{{baseUrl}}api"
+					],
+					"path": [
+						"generate"
+					],
+					"query": [
+						{
+							"key": "phone",
+							"value": "8778480033"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}api/login?phone=8778480033&otp=573449",
+					"host": [
+						"{{baseUrl}}api"
+					],
+					"path": [
+						"login"
+					],
+					"query": [
+						{
+							"key": "phone",
+							"value": "8778480033"
+						},
+						{
+							"key": "otp",
+							"value": "573449"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Book QR  Code Validate",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "1|2j35l4YKzqb8oLEcmyx5iSeQwvAEboHUSwqMA79j",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}api/book-qr-code-validate?qr_code=1|5|437420|1|20231001032158",
+					"host": [
+						"{{baseUrl}}api"
+					],
+					"path": [
+						"book-qr-code-validate"
+					],
+					"query": [
+						{
+							"key": "qr_code",
+							"value": "1|5|437420|1|20231001032158"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Sections",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}api/sections",
+					"host": [
+						"{{baseUrl}}api"
+					],
+					"path": [
+						"sections"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Terms",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}api/terms?section_id=1",
+					"host": [
+						"{{baseUrl}}api"
+					],
+					"path": [
+						"terms"
+					],
+					"query": [
+						{
+							"key": "section_id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Months",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}api/months?section_id=1&term_id=1",
+					"host": [
+						"{{baseUrl}}api"
+					],
+					"path": [
+						"months"
+					],
+					"query": [
+						{
+							"key": "section_id",
+							"value": "1"
+						},
+						{
+							"key": "term_id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Weeks",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}api/weeks?section_id=1&term_id=1&month_id=1",
+					"host": [
+						"{{baseUrl}}api"
+					],
+					"path": [
+						"weeks"
+					],
+					"query": [
+						{
+							"key": "section_id",
+							"value": "1"
+						},
+						{
+							"key": "term_id",
+							"value": "1"
+						},
+						{
+							"key": "month_id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Subjects",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}api/subjects?section_id=1&term_id=1&month_id=1&week_id=1",
+					"host": [
+						"{{baseUrl}}api"
+					],
+					"path": [
+						"subjects"
+					],
+					"query": [
+						{
+							"key": "section_id",
+							"value": "1"
+						},
+						{
+							"key": "term_id",
+							"value": "1"
+						},
+						{
+							"key": "month_id",
+							"value": "1"
+						},
+						{
+							"key": "week_id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Video Categories",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}api/video-categories?section_id=1&term_id=1&month_id=1&week_id=1&subject_id=1",
+					"host": [
+						"{{baseUrl}}api"
+					],
+					"path": [
+						"video-categories"
+					],
+					"query": [
+						{
+							"key": "section_id",
+							"value": "1",
+							"description": "Section id"
+						},
+						{
+							"key": "term_id",
+							"value": "1",
+							"description": "Term id"
+						},
+						{
+							"key": "month_id",
+							"value": "1",
+							"description": "Month id"
+						},
+						{
+							"key": "week_id",
+							"value": "1",
+							"description": "Week id"
+						},
+						{
+							"key": "subject_id",
+							"value": "1",
+							"description": "Subject id"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Videos",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}api/videos?section_id=1&term_id=1&month_id=1&week_id=1&subject_id=1&category_id=1",
+					"host": [
+						"{{baseUrl}}api"
+					],
+					"path": [
+						"videos"
+					],
+					"query": [
+						{
+							"key": "section_id",
+							"value": "1",
+							"description": "Section id"
+						},
+						{
+							"key": "term_id",
+							"value": "1",
+							"description": "Term id"
+						},
+						{
+							"key": "month_id",
+							"value": "1",
+							"description": "Month id"
+						},
+						{
+							"key": "week_id",
+							"value": "1",
+							"description": "Week id"
+						},
+						{
+							"key": "subject_id",
+							"value": "1",
+							"description": "Subject id"
+						},
+						{
+							"key": "category_id",
+							"value": "1",
+							"description": "Video category id"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Video by id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}api/videos/1",
+					"host": [
+						"{{baseUrl}}api"
+					],
+					"path": [
+						"videos",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Video Rating",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}api/video-rating?video_id=1&rating=5",
+					"host": [
+						"{{baseUrl}}api"
+					],
+					"path": [
+						"video-rating"
+					],
+					"query": [
+						{
+							"key": "video_id",
+							"value": "1"
+						},
+						{
+							"key": "rating",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DTTC Sections",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}api/dttcsections",
+					"host": [
+						"{{baseUrl}}api"
+					],
+					"path": [
+						"dttcsections"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DTTC Videos",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}api/dttcvideos?section_id=1&term=term-1",
+					"host": [
+						"{{baseUrl}}api"
+					],
+					"path": [
+						"dttcvideos"
+					],
+					"query": [
+						{
+							"key": "section_id",
+							"value": "1"
+						},
+						{
+							"key": "term",
+							"value": "term-1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DTTC Video by id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}api/dttcvideos/4",
+					"host": [
+						"{{baseUrl}}api"
+					],
+					"path": [
+						"dttcvideos",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Subscription Plans",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}api/subscription-plans?section_id=1",
+					"host": [
+						"{{baseUrl}}api"
+					],
+					"path": [
+						"subscription-plans"
+					],
+					"query": [
+						{
+							"key": "section_id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Subscription Store",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}api/subscription-payment?subscription_id=1&amount=90&gateway_log=test&payment_status=paid",
+					"host": [
+						"{{baseUrl}}api"
+					],
+					"path": [
+						"subscription-payment"
+					],
+					"query": [
+						{
+							"key": "subscription_id",
+							"value": "1"
+						},
+						{
+							"key": "amount",
+							"value": "90"
+						},
+						{
+							"key": "gateway_log",
+							"value": "test"
+						},
+						{
+							"key": "payment_status",
+							"value": "paid"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get User",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}api/get-user",
+					"host": [
+						"{{baseUrl}}api"
+					],
+					"path": [
+						"get-user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Food Categories",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}api/food-categories",
+					"host": [
+						"{{baseUrl}}api"
+					],
+					"path": [
+						"food-categories"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Food Types",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}api/food-types",
+					"host": [
+						"{{baseUrl}}api"
+					],
+					"path": [
+						"food-types"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Food Days",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}api/food-days",
+					"host": [
+						"{{baseUrl}}api"
+					],
+					"path": [
+						"food-days"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Food Videos",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}api/food-videos?food_category_id=1&food_type_id=1&food_day_id=1",
+					"host": [
+						"{{baseUrl}}api"
+					],
+					"path": [
+						"food-videos"
+					],
+					"query": [
+						{
+							"key": "food_category_id",
+							"value": "1"
+						},
+						{
+							"key": "food_type_id",
+							"value": "1"
+						},
+						{
+							"key": "food_day_id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Food Video by Id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}api/food-videos/1",
+					"host": [
+						"{{baseUrl}}api"
+					],
+					"path": [
+						"food-videos",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Slider Video",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}api/slider-videos",
+					"host": [
+						"{{baseUrl}}api"
+					],
+					"path": [
+						"slider-videos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Settings",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}api/settings",
+					"host": [
+						"{{baseUrl}}api"
+					],
+					"path": [
+						"settings"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "https://www.localhost/schoolapp/"
+		},
+		{
+			"key": "token",
+			"value": "1|ZMX6ZhJB2K0zq0ixfG3lCAL9EiRBmb6x7qfyUZz0",
+			"type": "string"
+		}
+	]
+}
